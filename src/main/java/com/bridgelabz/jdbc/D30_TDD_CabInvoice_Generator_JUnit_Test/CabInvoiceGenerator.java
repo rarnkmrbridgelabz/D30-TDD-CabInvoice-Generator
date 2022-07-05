@@ -20,4 +20,16 @@ public class CabInvoiceGenerator{
 			totalFare = totalFare + this.calculateFare(ride.distance, ride.time);
 		return totalFare;
 	}
+	
+	public int numberOfRides(Rides[] rides) {
+        return rides.length;
+    }
+	
+	public double calculateAverageFarePerRide(Rides[] rides) {
+		CabInvoiceGenerator cabInvoiceGenerator = new CabInvoiceGenerator();
+        double totalFare = cabInvoiceGenerator.calculateFare(rides);
+        double numberOfRides = rides.length;
+        double averageFare = totalFare/numberOfRides;
+        return averageFare;
+    }
 }
